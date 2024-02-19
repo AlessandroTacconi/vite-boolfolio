@@ -56,7 +56,8 @@ export default {
 
 <template>
   <main class="container">
-    <div>Lista Progetti</div>
+    <h1>Portfolio</h1>
+
     <div class="my-3" v-if="loading">
       caricamento in corso...
       <pre class="my-3">
@@ -76,6 +77,7 @@ export default {
     </pre
       >
     </div>
+
     <div class="row m-5" v-else>
       <nav class="my-3">
         <ul class="d-flex justify-content-between list-unstyled">

@@ -10,6 +10,5 @@ export default {
 </script>
 <template>
   <AppHeader />
-  <h1>Portfolio</h1>
   <router-view />
 </template>
