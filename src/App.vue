@@ -1,7 +1,12 @@
 <script>
+import AppMain from './components/AppMain.vue';
+
 import axios from 'axios';
 export default {
   name: 'Portfolio',
+  components: {
+    AppMain,
+  },
   data() {
     return {
       projects: [],
@@ -29,18 +34,8 @@ export default {
 };
 </script>
 <template>
-  <h1>Portfolio</h1>
-  <div class="row m-5">
-    <div class="col col-md-3 g-5" v-for="project in projects">
-      <div class="card">
-        <div class="card-body">
-          <h6 class="card-title">{{ project.title }}</h6>
-          <p class="card-subtitle mb-2 text-body-secondary">
-            {{ project.year }}
-          </p>
-          <p class="card-text">{{ project.description }}</p>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <h1>Portfolio</h1>
+    <AppMain :projects="projects" />
   </div>
 </template>
