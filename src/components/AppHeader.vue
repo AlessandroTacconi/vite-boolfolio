@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header class="bg-warning">
     <div class="d-flex justify-content-between container py-3">
       <div>LOGO</div>
       <ul class="d-flex list-unstyled gap-3 m-0 p-0">
@@ -15,8 +15,3 @@ export default {
     </div>
   </header>
 </template>
-<style>
-header {
-  background-color: rgb(255, 200, 21);
-}
-</style>
