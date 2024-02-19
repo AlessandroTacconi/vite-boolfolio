@@ -1,11 +1,13 @@
 <script>
 import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 
 import axios from 'axios';
 export default {
   name: 'Portfolio',
   components: {
     AppMain,
+    AppHeader,
   },
   data() {
     return {
@@ -35,6 +37,7 @@ export default {
 </script>
 <template>
   <div class="container">
+    <AppHeader />
     <h1>Portfolio</h1>
     <AppMain :projects="projects" />
   </div>
