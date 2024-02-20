@@ -4,6 +4,7 @@ export default {
   name: 'ProjectDetail',
   data() {
     return {
+      loading: false,
       project: {},
       Url: 'http://127.0.0.1:8000',
       apiUrl: {
@@ -13,6 +14,7 @@ export default {
   },
   methods: {
     getProject() {
+      this.loading = true;
       axios
         .get(this.Url + this.apiUrl.projects + '/' + this.$route.params.slug)
         .then((response) => {
@@ -20,6 +22,9 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          this.loading = false;
         });
     },
   },
@@ -30,6 +35,25 @@ export default {
 </script>
 <template>
   <div class="container">
+    <div class="my-3" v-if="loading">
+      caricamento in corso...
+      <pre class="my-3">
+───────────████████
+──────────███▄███████
+──────────███████████
+──────────██████
+──────────█████████
+█───────███████
+██────████████████
+███──██████████──█
+─█████████████
+────████████
+─────███──██
+─────██────█
+─────██────██
+    </pre
+      >
+    </div>
     <h2>{{ project.title }}</h2>
     <div>{{ project.title }}</div>
     <div class="d-flex gap-3">
