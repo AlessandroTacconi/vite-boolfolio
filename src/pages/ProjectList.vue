@@ -56,7 +56,7 @@ export default {
 
 <template>
   <main class="container">
-    <h1>Portfolio</h1>
+    <h1 class="proj">My projects</h1>
 
     <div class="my-3" v-if="loading">
       caricamento in corso...
@@ -83,21 +83,21 @@ export default {
         <ul class="d-flex justify-content-between list-unstyled">
           <li>
             <button
-              class="btn btn-warning"
+              class="btn btn-dark btn-sm my-3"
               v-show="responseData.results?.prev_page_url"
               @click="prevPage"
             >
-              Prev
+              <i class="fa-regular fa-hand-point-left"></i>
             </button>
           </li>
 
           <li>
             <button
-              class="btn btn-warning"
+              class="btn btn-dark btn-sm my-"
               v-show="responseData.results?.next_page_url"
               @click="nextPage"
             >
-              Next
+              <i class="fa-regular fa-hand-point-right"></i>
             </button>
           </li>
         </ul>
@@ -111,8 +111,18 @@ export default {
     </div>
   </main>
 </template>
-<style>
+<style scoped>
 pre {
   font-size: 4px;
+}
+
+.proj {
+  font-size: 70px;
+  /* font-family: amagro; */
+  text-transform: uppercase;
+  border: 3px solid black;
+  padding: 5px;
+  text-align: center;
+  margin-top: 15px;
 }
 </style>

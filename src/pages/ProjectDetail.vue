@@ -54,23 +54,48 @@ export default {
     </pre
       >
     </div>
-    <h2>{{ project.title }}</h2>
-    <div>{{ project.title }}</div>
-    <div class="d-flex gap-3">
-      <p class="btn btn-primary">
+    <div class="d-flex gap-3 mt-4">
+      <p class="btn btn-dark btn-sm my-3">
         <router-link
           :to="{ name: 'projects' }"
           class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
           >torna alla lista</router-link
         >
       </p>
-      <p class="btn btn-primary">
+      <p class="btn btn-dark btn-sm my-3">
         <router-link
           :to="{ name: 'home' }"
           class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-          >torna alla pagina principale</router-link
+          >torna alla home</router-link
         >
       </p>
     </div>
+    <div class="d-flex justify-content-between container proj left gap-5">
+      <div>
+        <h1>My projects</h1>
+      </div>
+      <div>
+        <h5>{{ project.title }}</h5>
+        <p>{{ project.category.title }} - {{ project.year }}</p>
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
   </div>
 </template>
+<style scoped>
+.proj {
+  /* font-family: amagro; */
+  text-transform: uppercase;
+  border: 3px solid black;
+  padding: 5px;
+  text-align: start;
+}
+
+.left {
+  margin-top: 25vh;
+}
+
+h1 {
+  font-size: 70px;
+}
+</style>
