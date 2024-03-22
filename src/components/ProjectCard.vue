@@ -9,7 +9,14 @@ export default {
       return this.project.description?.substring(0, 50) + '...';
     },
     ProjectTitle() {
-      return this.project.title?.substring(0, 50) + '...';
+      const maxLength = 50;
+      const title = this.project.title;
+
+      if (title && title.length > maxLength) {
+        return title.substring(0, maxLength) + '...';
+      } else {
+        return title;
+      }
     },
   },
 };
